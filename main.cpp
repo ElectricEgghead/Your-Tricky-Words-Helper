@@ -7,8 +7,7 @@
  
 #include <iostream>
 #include <string>
-
-#define string std::string
+#include "usingDeclarations.h"
 
 char userLetterInput;
 string userFirstName;
