@@ -1,5 +1,5 @@
 /** Programmer: AB
- * Date: 6/28/18
+ * Date: 1/6/2020
  * Description: Application that takes in a letter and displays tricky words
  * that are often misspelled.
  * 
