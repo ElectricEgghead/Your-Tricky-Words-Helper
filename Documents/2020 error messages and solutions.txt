@@ -1,0 +1,17 @@
+Project: Your Tricky Words Helper
+
+2/13/20
+
+Received during while condition in do-while loop. 
+
+https://stackoverflow.com/questions/14544043/operand-types-are-incompatible-char-and-const-char
+
+For reference:
+"x" = const char (&)[2]
+'x' = char
+
+FIX: change "y" to 'y'. I changed the data type from a string to char.
+
+--
+
+
