@@ -1,0 +1,85 @@
+/**
+Description: Application that takes in a letter and displays tricky-to-spell words.
+**/
+
+#include <iostream>
+#include <fstream>
+#include <locale>
+#include <string>
+#include <vector>
+#include "usingDeclarations.h"
+
+char userLetterInput;
+char userChoiceContinue; 
+string userFirstName;
+string line;
+vector <string> trickyWordsVector;
+void printDiffLetters(ifstream& trickyWordsFile);
+
+//TODO check - not all words in alphabetical order
+
+int main() {
+	cout << "----------------<>-----------\n";
+	cout << "Welcome to your TRICKY WORDS Helper!\n";
+	cout << "----------------<>-----------\n";
+	cout << "\n\nEnter your first name: ";
+	cin >> userFirstName;
+
+	do {
+		cout << "Enter a letter [a - z]: ";
+		cin >> userLetterInput;
+		char(tolower(userLetterInput));
+		cout << "\n\n" << userFirstName << ",\nHere's your list of tricky words for the letter (" << char(toupper(userLetterInput)) << "):" << endl;
+
+		ifstream trickyWordsFile("trickyWordsList.txt"); // open the file
+		
+		//TODO erase - test to see if all words print
+		if (trickyWordsFile.is_open()) {
+			while (getline(trickyWordsFile, line)) {
+				if (line.size() > 0) {
+					trickyWordsVector.push_back(line);
+				}
+			}
+		} else {
+			cerr << "Cannot open the file.";
+		}
+
+		for (int i = 0; i < trickyWordsVector.size(); i++) {
+			cout << trickyWordsVector[i] << endl;
+		}
+			   
+		printDiffLetters(trickyWordsFile);
+		trickyWordsFile.close();
+
+		cout << "\n\nWould you like to enter another letter [y,n]?: ";
+		cin >> userChoiceContinue;
+
+	} while (userChoiceContinue == 'y'); // end do-while
+	
+	return 0;
+} // end main()
+
+void printDiffLetters(ifstream& trickyWordsFile) {
+		switch (userLetterInput) {
+
+		case 'a': 
+			for (int i = 0; i < line.length(); i++) {
+				if (line.at(0) == 'a') {
+					cout << line;
+				}
+
+			};
+
+			break;
+		} // end switch
+
+} // end printDiffLetters();
+
+
+/*
+http://www.cplusplus.com/forum/beginner/217118/
+
+https://stackoverflow.com/questions/39681897/c-how-to-fill-a-vector-of-undefined-size-with-strings
+
+https://thispointer.com/c-how-to-read-a-file-line-by-line-into-a-vector/
+*/
