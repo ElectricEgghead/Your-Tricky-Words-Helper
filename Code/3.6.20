@@ -1,0 +1,14 @@
+Attempting to setup Visual Studio Code on writing laptop.
+
+Needs more configuration. JSon file, etc.
+
+Will clear space on computer, then finish installation of MinGW and setup VS Code.
+
+Very small file for VS Code ~200mb.
+
+Helpful sites:
+
+https://github.com/microsoft/vscode-cpptools/issues/1863
+https://github.com/microsoft/vscode-cpptools/issues/1041
+
+As of 3/7/20, using https://repl.it/ :)
