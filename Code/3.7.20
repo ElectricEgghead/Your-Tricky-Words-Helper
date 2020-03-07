@@ -10,11 +10,13 @@ Description: Application that takes in a letter and displays tricky-to-spell wor
 #include "usingDeclarations.h"
 
 char userLetterInput;
-char userChoiceContinue; 
+char userChoiceContinue;
+char letterCharSwitch;
 string userFirstName;
 string line;
 vector <string> trickyWordsVector;
-void printDiffLetters();
+void printWords();
+void switchLetters();
 
 //TODO not all words in alphabetical order
 
@@ -28,7 +30,7 @@ int main() {
 	do {
 		cout << "Enter a letter [a - z]: ";
 		cin >> userLetterInput;
-		char(tolower(userLetterInput));
+    char(tolower(userLetterInput)); //TODO data validation
 		cout << "\n\n" << userFirstName << ",\n\nHere's your list of tricky words for the letter (" << char(toupper(userLetterInput)) << "):\n" << endl;
 
 		ifstream trickyWordsFile("trickyWordsList.txt"); // open the file
@@ -43,38 +45,56 @@ int main() {
 			cerr << "Cannot open the file.";
 		}
 
-		for (int i = 0; i < trickyWordsVector.size(); i++) {
-			cout << trickyWordsVector[i] << endl;
-		}
-
 		trickyWordsFile.close();
 			   
-		printDiffLetters();
+		// switch and print letters
+    switchLetters();
 
-		cout << "\n\nWould you like to enter another letter [y,n]?: ";
+		cout << "\nWould you like to enter another letter [y,n]?: "; //TODO error prints list twice
 		cin >> userChoiceContinue;
 
-	} while (userChoiceContinue == 'y'); // end do-while
+	} while (userChoiceContinue == 'y' || userChoiceContinue == 'Y'); // end do-while
 
-  	cout << "\n----------------<>-----------\n";
+  cout << "\n----------------<>-----------\n";
 	cout << "Thank you for using Your TRICKY WORDS Helper!\n";
 	cout << "----------------<>-----------\n";
 	
 	return 0;
 } // end main()
 
-void printDiffLetters() {
-	/*
-		switch (userLetterInput) {
-		
-		case a: //TODO print words that begin with an A
-		// if word starts with an a
-		for(int i = 0; i < ){
+void printWords(){
+  for (int i = 0; i < trickyWordsVector.size(); i++) {
+			
+      	if(trickyWordsVector[i][0] == letterCharSwitch){
+          cout << trickyWordsVector[i];
+          cout << "\n";
+        }
 		}
 
-			break;
+}
+void switchLetters() {
+
+    // attempting to create switch statement using a multidimenional array
+    switch (userLetterInput) {
+			
+    case 'a':
+    letterCharSwitch = 'a';
+    printWords();
+    break;
+
+    case 'b':
+    letterCharSwitch = 'b';
+    printWords();
+    break;
+
+    case 'c':
+    letterCharSwitch = 'c';
+    printWords();
+    break;
+    
+    default:
+    cout << "\nERROR: Incorrect input.\n";
 		} // end switch
-	*/
 
 } // end printDiffLetters();
 
