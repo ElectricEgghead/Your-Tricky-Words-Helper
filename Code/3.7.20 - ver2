@@ -1,6 +1,4 @@
-/**
-Description: Application that takes in a letter and displays tricky-to-spell words.
-**/
+// Description: Application that takes in a letter and displays tricky-to-spell words.
 
 #include "includeDeclarations.h"
 #include "usingDeclarations.h"
