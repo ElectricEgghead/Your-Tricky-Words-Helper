@@ -41,25 +41,27 @@ int main() {
 	trickyWordsFile.close();
 			   
 	// switch letters and print words
-    	printWords();
+  printWords();
 
-	cout << "\nWould you like to enter another letter [y,n]?: "; //TODO error prints list twice. Related to do-while loop
+	cout << "\nWould you like to enter another letter [y,n]?: "; //TODO error prints list more than once. Related to increment in printWords().
 	cin >> userChoiceContinue;
-	} while(userChoiceContinue == 'y' || userChoiceContinue == 'Y'); // end while
+  } while(char(tolower(userChoiceContinue)) == 'y'); // end while
 
-  	cout << "\n----------------<>-----------\n";
+  cout << "\n----------------<>-----------\n";
 	cout << "Thank you for using Your TRICKY WORDS Helper!\n";
 	cout << "----------------<>-----------\n";
 	return 0;
 } // end main()
 
 void printWords(){
-  	for (int i = 0; i < trickyWordsVector.size(); i++) {
-     	letterCharSwitch = userLetterInput;
+
+  letterCharSwitch = userLetterInput;
+
+  for (int i = 0; i < trickyWordsVector.size(); i++) {
     
  	if(trickyWordsVector[i][0] == letterCharSwitch){
-      	cout << trickyWordsVector[i];
-      	cout << "\n";
-      }
+     cout << trickyWordsVector[i];
+     cout << "\n";
+     }
   }
 } // end printWords()
