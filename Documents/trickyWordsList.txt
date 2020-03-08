@@ -162,6 +162,7 @@ magically
 maintenance
 maneuver
 marshmallow
+Massachusetts
 mathematics
 medieval
 mediocre
@@ -173,7 +174,7 @@ miscellaneous
 mischief
 mischievous
 misogyny
-misspell (mis + spell)
+misspell (miss + pell)
 mysterious
 nauseous
 necessary (cess)
@@ -194,16 +195,20 @@ parliament
 particular
 pastime
 peninsula
+Pennsylvania
 perseverance
 personnel
 pharaoh
+physician
 piece
 pigeon
 pistachio
+platypus
 playwright
 pleasant
 plenitude
 possession
+practice
 precede
 preferable
 prejudice
@@ -214,6 +219,8 @@ privilege
 proceed
 pronunciation
 propagate
+psychologist
+psychiatrist
 publicly
 puerile
 pumpkin
@@ -226,6 +233,7 @@ receive
 recommend
 reference
 referred
+referral
 refrigerator
 relevant
 religious
