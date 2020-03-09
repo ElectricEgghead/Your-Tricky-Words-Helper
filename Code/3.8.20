@@ -1,3 +1,5 @@
+// NON-WORKING CODE
+
 // Description: Android/iOS application that takes in a letter and displays tricky-to-spell words.
 
 #include "includeDeclarations.h"
