@@ -1,5 +1,6 @@
 A While
 Absence
+Abstruse
 Accelerate
 Acceptable
 Accidentally
@@ -98,6 +99,7 @@ Exercise
 Existence
 Experience
 Explanation
+Facetious
 Fahrenheit
 Fascinate
 February
