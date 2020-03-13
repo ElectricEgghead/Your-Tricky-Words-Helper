@@ -3,9 +3,7 @@
 
 //todo rewrite without global vars. use narrow scope. call functions by passing var - value or reference - as arguments
 //todo research macros. research header guards
-//todo look for remove duplicates in vector - fix issue
 //todo research refactor code - function purpose to do one thing only and do it well. Add a few parameters
-
 */
 
 #include "includeDeclarations.h"
@@ -36,9 +34,11 @@ int main() {
 			ifstream trickyWordsFile("trickyWordsList.txt");
 
 			if (trickyWordsFile.is_open()) {
-				while (getline(trickyWordsFile, line)) {
-					if (line.size() > 0) {
-						trickyWordsVector.push_back(line);
+				if (trickyWordsVector.empty()) {
+					while (getline(trickyWordsFile, line)) {
+						if (line.size() > 0) {
+							trickyWordsVector.push_back(line);
+						}
 					}
 				}
 			}
