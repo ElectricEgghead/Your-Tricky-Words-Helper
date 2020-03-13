@@ -2,9 +2,10 @@
 //TODO BETTER code suggestions: https://stackoverflow.com/questions/60634567/how-to-print-a-list-of-words-from-a-file-using-a-vector-once-per-user-query-c
 
 //todo hint: how many times reading into vector?
-//todo rewrite without global vars, suitable narrow scope, call funcs by pass vars - value or reference
-//todo header guards research
+//todo rewrite without global vars. use narrow scope. call functions by passing var - value or reference - as arguments
+//todo research macros. research header guards
 //todo look for remove duplicates in vector - fix issue
+//todo research refactor code - function purpose to do one thing only and do it well. Add a few parameters
 
 */
 
