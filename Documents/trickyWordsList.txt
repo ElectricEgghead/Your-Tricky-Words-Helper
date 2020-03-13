@@ -14,7 +14,7 @@ Acquit
 Across
 Advice
 Aficionado
-All Right (NOT Alright)
+All Right (not alright)
 Amateur
 Anoint
 Apology
@@ -43,9 +43,9 @@ Ceiling
 Cemetery
 Changeable
 Chauvinism
-Chile = A Country
-Chili = Hot Pepper
-Chilly = Cold Outside
+Chile (a country)
+Chili (hot pepper)
+Chilly (cold outside)
 Chocolaty
 Coliseum
 Collectible
@@ -75,7 +75,7 @@ Desperate
 Deterrence
 Development
 Device
-Dieing = Change Hair Color
+Dieing (change hair color)
 Difference
 Diorama
 Disappear
@@ -85,7 +85,7 @@ Discipline
 Dissipate
 Drunkenness
 Dumbbell
-Dying = Death Is Coming
+Dying (death is coming)
 Ecstasy
 Embarrass(ment)
 Enough
@@ -139,12 +139,12 @@ Inoculate
 Intelligence
 Irascible
 Irresistible
-Its (belongs To It)
-It's (it Is)
+Its (belongs to it)
+It's (it is)
 Jealous
 Jewelry
 Judgment
-Kernel = Piece Of Corn Or A Small Amount; Colonel = High-ranking Officer
+Kernel (small amount or piece of corn; Colonel = high-ranking officer)
 Ketchup
 Knowledge
 Labeled
@@ -155,8 +155,8 @@ Library
 License
 Lieutenant
 Liquefy
-Loose = Baggy Clothes
-Lose = Lose A Game
+Loose (baggy clothes)
+Lose (lose a game)
 Lying
 Magically
 Maintenance
@@ -174,12 +174,12 @@ Miscellaneous
 Mischief
 Mischievous
 Misogyny
-Misspell (miss + Pell)
+Misspell (miss + pell)
 Mysterious
 Nauseous
 Necessary (cess)
 Neighbor
-No One (but NOBODY Is One Word)
+No One (Nobody is one word)
 Noticeable
 Nuclear
 Occasionally
@@ -213,8 +213,8 @@ Precede
 Preferable
 Prejudice
 Presumptuous
-Principal = A School Pal
-Principle = A Rule
+Principal (a school pal)
+Principle (a rule)
 Privilege
 Proceed
 Pronunciation
@@ -267,20 +267,20 @@ Success
 Supersede
 Tableau
 Tariff
-Their = Belongs To Them
-There = Somewhere Over There
-They're = They Are
+Their (belongs to them)
+There (somewhere over there)
+They're (they are)
 Thorough
 Threshold
 Through
-To = 'go To The Store'
+To (go to the store)
 Tomorrow
 Tongue
-Too = 'I Am Great, Too."
+Too (I am great, too)
 Tragedy
 Truly
 Twelfth
-Two = '2'
+Two (2)
 Tyranny
 Ukulele
 Until
