@@ -2,9 +2,6 @@
 //todo rewrite without global vars. use narrow scope. call functions by passing var - value or reference - as arguments
 //todo research macros. research header guards
 //todo research refactor code - function purpose to do one thing only and do it well. Add a few parameters
-//todo research cin.sync()
-
-//todo userLetterInput catches when user puts in more than one char
 */
 
 #include "includeDeclarations.h"
@@ -16,7 +13,7 @@ string userFirstName;
 string line;
 vector <string> trickyWordsVector;
 void printWords();
-void nameCurseWords();
+// void nameCurseWords(string userFirstName);
 
 int main() {
 	cout << "----------------<>-----------\n";
@@ -24,13 +21,13 @@ int main() {
 	cout << "----------------<>-----------\n";
 	cout << "\nEnter your first name: ";
 	getline(cin, userFirstName);
-	nameCurseWords();
+	// nameCurseWords();
 
 	do {
 		cout << "\nEnter a letter [a - z]: ";
-		getline(cin, userLetterInput);
+		cin >> userLetterInput;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignores extra char inputted
 		userLetterInput = toupper(userLetterInput);
-		cin.sync();
 
 		if (isalpha(userLetterInput)) {
 			cout << "\n" << userFirstName << ",\n\nHere's your list of tricky words for the letter (" << char(toupper(userLetterInput)) << "):\n" << endl;
@@ -77,8 +74,10 @@ void printWords() {
 	}
 } // end printWords()
 
-void nameCurseWords() {
+/*
+void nameCurseWords(string userFirstName) {
 
 //todo add code, lol
 
 } // end nameCurseWords()
+*/
