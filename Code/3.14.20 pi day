@@ -2,6 +2,7 @@
 //todo rewrite without global vars. use narrow scope. call functions by passing var - value or reference - as arguments
 //todo research macros. research header guards
 //todo research refactor code - function purpose to do one thing only and do it well. Add a few parameters
+//todo research cin.sync()
 */
 
 #include "includeDeclarations.h"
