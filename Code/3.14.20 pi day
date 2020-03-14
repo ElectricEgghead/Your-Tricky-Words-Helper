@@ -1,10 +1,10 @@
 /*
-//TODO BETTER code suggestions: https://stackoverflow.com/questions/60634567/how-to-print-a-list-of-words-from-a-file-using-a-vector-once-per-user-query-c
-
 //todo rewrite without global vars. use narrow scope. call functions by passing var - value or reference - as arguments
 //todo research macros. research header guards
 //todo research refactor code - function purpose to do one thing only and do it well. Add a few parameters
+//todo research cin.sync()
 
+//todo userLetterInput catches when user puts in more than one char
 */
 
 #include "includeDeclarations.h"
@@ -16,18 +16,21 @@ string userFirstName;
 string line;
 vector <string> trickyWordsVector;
 void printWords();
+void nameCurseWords();
 
 int main() {
 	cout << "----------------<>-----------\n";
 	cout << "Welcome to Your TRICKY WORDS Helper!\n";
 	cout << "----------------<>-----------\n";
 	cout << "\nEnter your first name: ";
-	cin >> userFirstName;
+	getline(cin, userFirstName);
+	nameCurseWords();
 
 	do {
 		cout << "\nEnter a letter [a - z]: ";
-		cin >> userLetterInput;
+		getline(cin, userLetterInput);
 		userLetterInput = toupper(userLetterInput);
+		cin.sync();
 
 		if (isalpha(userLetterInput)) {
 			cout << "\n" << userFirstName << ",\n\nHere's your list of tricky words for the letter (" << char(toupper(userLetterInput)) << "):\n" << endl;
@@ -73,3 +76,9 @@ void printWords() {
 		}
 	}
 } // end printWords()
+
+void nameCurseWords() {
+
+//todo add code, lol
+
+} // end nameCurseWords()
