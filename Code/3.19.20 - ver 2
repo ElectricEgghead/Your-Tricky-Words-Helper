@@ -1,0 +1,106 @@
+/*
+//todo rewrite without global vars. use narrow scope. call functions by passing var - value or reference - as arguments
+*/
+
+#include <iostream>
+#include <fstream>
+#include <locale>
+#include <string>
+#include <vector>
+#include <limits>
+#include <sstream>
+#include "usingDeclarations.h"
+
+char userLetterInput;
+char userChoiceContinue;
+string userFirstName;
+string line;
+vector <string> trickyWordsVector;
+void printWords();
+bool nameIsAlpha(string userFirstName);
+// void nameCurseWords(string userFirstName);
+
+int main() {
+	cout << "----------------<>-----------\n";
+	cout << "Welcome to Your TRICKY WORDS Helper!\n";
+	cout << "----------------<>-----------\n";
+	cout << "\nEnter your first name: ";
+	getline(cin, userFirstName);
+
+	//todo test code alphabetical string
+	nameIsAlpha(userFirstName);
+
+	// nameCurseWords();
+
+		do {
+			cout << "\nEnter a letter [a - z]: ";
+			cin >> userLetterInput;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignores extra char inputted
+			userLetterInput = toupper(userLetterInput);
+
+			if (isalpha(userLetterInput)) {
+				cout << "\n" << userFirstName << ",\n\nHere's your list of tricky words for the letter (" << char(toupper(userLetterInput)) << "):\n" << endl;
+
+				ifstream trickyWordsFile("trickyWordsList.txt");
+
+				if (trickyWordsFile.is_open()) {
+					if (trickyWordsVector.empty()) {
+						while (getline(trickyWordsFile, line)) {
+							if (line.size() > 0) {
+								trickyWordsVector.push_back(line);
+							}
+						}
+					}
+				}
+				else {
+					cerr << "Cannot open the file.";
+				}
+
+				trickyWordsFile.close();
+
+				printWords();
+			}
+			do {
+				cout << "\nWould you like to enter another letter [y,n]?: ";
+				cin >> userChoiceContinue;
+			} while (char(tolower(userChoiceContinue)) != 'y' && char(tolower(userChoiceContinue)) != 'n');
+		} while (char(tolower(userChoiceContinue)) == 'y');
+
+	cout << "\n----------------<>-----------\n";
+	cout << "Thank you for using Your TRICKY WORDS Helper!\n";
+	cout << "----------------<>-----------\n";
+	return 0;
+} // end main()
+
+void printWords() {
+
+	for (int i = 0; i < trickyWordsVector.size(); i++) {
+
+		if (trickyWordsVector[i][0] == userLetterInput) {
+			cout << trickyWordsVector[i];
+			cout << "\n";
+		}
+	}
+} // end printWords()
+
+bool nameIsAlpha(string userFirstName) {
+	for (int i = 0; i < userFirstName.length(); i++) {
+		if (userFirstName[i] >= 'a' && userFirstName[i] <= 'z') {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+} // end nameIsAlpha()
+
+#if 0
+void nameCurseWords(string userFirstName) {
+
+//todo add code, lol
+
+} // end nameCurseWords()
+
+
+|| userFirstName[i] == ' '
+#endif
