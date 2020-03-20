@@ -24,14 +24,13 @@ int main() {
 	cout << "----------------<>-----------\n";
 	cout << "Welcome to Your TRICKY WORDS Helper!\n";
 	cout << "----------------<>-----------\n";
-	cout << "\nEnter your first name: ";
-	getline(cin, userFirstName);
-
-	//todo test code alphabetical string
+	
+	
 	nameIsAlpha(userFirstName);
 
 	// nameCurseWords();
 
+	do {
 		do {
 			cout << "\nEnter a letter [a - z]: ";
 			cin >> userLetterInput;
@@ -40,27 +39,29 @@ int main() {
 
 			if (isalpha(userLetterInput)) {
 				cout << "\n" << userFirstName << ",\n\nHere's your list of tricky words for the letter (" << char(toupper(userLetterInput)) << "):\n" << endl;
+			}
+		} while (!isalpha(userLetterInput));
 
-				ifstream trickyWordsFile("trickyWordsList.txt");
+		ifstream trickyWordsFile("trickyWordsList.txt");
 
-				if (trickyWordsFile.is_open()) {
-					if (trickyWordsVector.empty()) {
-						while (getline(trickyWordsFile, line)) {
-							if (line.size() > 0) {
-								trickyWordsVector.push_back(line);
-							}
-						}
+		if (trickyWordsFile.is_open()) {
+			if (trickyWordsVector.empty()) {
+				while (getline(trickyWordsFile, line)) {
+					if (line.size() > 0) {
+						trickyWordsVector.push_back(line);
 					}
 				}
-				else {
-					cerr << "Cannot open the file.";
-				}
-
-				trickyWordsFile.close();
-
-				printWords();
 			}
-			do {
+		}
+		else {
+			cerr << "Cannot open the file.";
+		}
+
+		trickyWordsFile.close();
+
+		printWords();
+		
+		do {
 				cout << "\nWould you like to enter another letter [y,n]?: ";
 				cin >> userChoiceContinue;
 			} while (char(tolower(userChoiceContinue)) != 'y' && char(tolower(userChoiceContinue)) != 'n');
@@ -84,15 +85,25 @@ void printWords() {
 } // end printWords()
 
 bool nameIsAlpha(string userFirstName) {
-	for (int i = 0; i < userFirstName.length(); i++) {		
-		if (isalpha(userFirstName[i])) {
-			cout << "Between a and z or A and Z.";
-			return false;
-		} else {
-			cout << "NOT between a and z.";
+
+	do {
+		cout << "\nEnter your first name: ";
+		getline(cin, userFirstName);
+
+		//todo test code alphabetical string
+		for (int i = 0; i < userFirstName.length(); i++) {
+			if (isalpha(userFirstName[i])) {
+				cout << "Letter between a and z.";
+				cout << userFirstName;
+				return true;
+			} else {
+				break;
+			}
 		}
-	}
-} // end nameIsAlpha()
+
+	} while (false); 
+
+}// end nameIsAlpha()
 
 #if 0
 void nameCurseWords(string userFirstName) {
