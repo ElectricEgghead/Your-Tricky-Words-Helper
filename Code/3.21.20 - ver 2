@@ -53,6 +53,7 @@ int main() {
 		do {
 			cout << "\nWould you like to enter another letter [y,n]?: ";
 			cin >> userChoiceContinue;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			} while (char(tolower(userChoiceContinue)) != 'y' && char(tolower(userChoiceContinue)) != 'n');
 	} while (char(tolower(userChoiceContinue)) == 'y');
 
@@ -69,8 +70,10 @@ bool nameIsAlpha() {
 		
 		//todo test code alphabetical string
 		for (char nameChar : userFirstName) {
-			if (isalpha(nameChar)) {
+			if (isalpha(nameChar) && (!isdigit(nameChar))) {
 				return false;
+			} else {
+				break;
 			}
 		}
 	} while (true);
