@@ -19,15 +19,15 @@ vector <string> trickyWordsVector;
 void printWords();
 void letterIsAlpha();
 void nameIsAlpha();
-// void nameCurseWords(string userFirstName);
+// void nameIsCurseWords(string userFirstName);
 
 int main() {
 	cout << "----------------<>-----------\n";
 	cout << "Welcome to Your TRICKY WORDS Helper!\n";
 	cout << "----------------<>-----------\n";
-	
+
 	nameIsAlpha();
-	// nameCurseWords();
+	// nameIsCurseWords();
 
 	do {
 		letterIsAlpha();
@@ -42,14 +42,15 @@ int main() {
 					}
 				}
 			}
-		}	else {
+		}
+		else {
 			cerr << "Cannot open the file.";
 		}
 
 		trickyWordsFile.close();
 
 		printWords();
-		
+
 		do {
 			cout << "\nWould you like to enter another letter [y,n]?: ";
 			cin >> userChoiceContinue;
@@ -70,11 +71,29 @@ void nameIsAlpha() {
 		cout << "\nEnter your first name: ";
 		getline(cin, userFirstName);
 		//todo test code alphabetical string: takes in newline \n. Shouldn't.
-		//todo make elegant code.
-		nameOnlyAlpha = userFirstName.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
+		//todo write elegant code
+	
+/*
+Something like this. Problem is that this doesn't take in anything. Will fix.
+
+		bool nameIsAlpha(){
+	do {
+		cout << "\nEnter your first name: ";
+		getline(cin, userFirstName);
+
+		for(char nameChar : userFirstName){
+			if(userFirstName.find_first_not_of(isalpha(nameChar))){
+				return false;
+		} else {
+				break;
+			}
+		}
+	} while(true);
+} // end nameIsAlpha()
+*/
+	nameOnlyAlpha = userFirstName.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
 	} while (nameOnlyAlpha != string::npos);
 } // end nameIsAlpha()
-
 
 void letterIsAlpha() {
 	do {
@@ -101,11 +120,11 @@ void printWords() {
 } // end printWords()
 
 #if 0
-void nameCurseWords(string userFirstName) {
+void nameIsCurseWords(string userFirstName) {
 
-//todo add code, lol
+	//todo add code, lol
 
-} // end nameCurseWords()
+} // end nameIsCurseWords()
 
 || userFirstName[i] == ' '
 #endif
@@ -113,15 +132,16 @@ void nameCurseWords(string userFirstName) {
 
 #if 0
 
-//TODO TEST THE PROGRAM
-// A few best practices: https://codereview.stackexchange.com/questions/162569/checking-if-each-char-in-a-string-is-a-decimal-digit
+//TODO LEARN HOW to test the program :)
+// Example and a few best practices: https://codereview.stackexchange.com/questions/162569/checking-if-each-char-in-a-string-is-a-decimal-digit
+//
 
 #include <iostream>
 #include <iomanip>
 #include <string>
 #include <regex>
 
-bool wasInteger(const std::string& num) {
+bool wasInteger(const std::string & num) {
 	return std::regex_match(num, std::regex("[+-]?[0-9]+"));
 }
 
