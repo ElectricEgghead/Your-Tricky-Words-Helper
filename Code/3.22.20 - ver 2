@@ -76,7 +76,7 @@ void nameIsAlpha() {
 /*
 Something like this. Problem is that this doesn't take in anything. Will fix.
 
-		bool nameIsAlpha(){
+bool nameIsAlpha(){
 	do {
 		cout << "\nEnter your first name: ";
 		getline(cin, userFirstName);
@@ -85,7 +85,7 @@ Something like this. Problem is that this doesn't take in anything. Will fix.
 			if(userFirstName.find_first_not_of(isalpha(nameChar))){
 				return false;
 		} else {
-				break;
+			break;
 			}
 		}
 	} while(true);
