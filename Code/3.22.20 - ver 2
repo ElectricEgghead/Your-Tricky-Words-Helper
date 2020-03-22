@@ -69,7 +69,8 @@ void nameIsAlpha() {
 	do {
 		cout << "\nEnter your first name: ";
 		getline(cin, userFirstName);
-		//todo test code alphabetical string: passes on er1??	
+		//todo test code alphabetical string: takes in newline \n. Shouldn't.
+		//todo make elegant code.
 		nameOnlyAlpha = userFirstName.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
 	} while (nameOnlyAlpha != string::npos);
 } // end nameIsAlpha()
