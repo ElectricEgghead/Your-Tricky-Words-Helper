@@ -1,0 +1,51 @@
+//TODO TEST THE PROGRAM
+// A few best practices: https://codereview.stackexchange.com/questions/162569/checking-if-each-char-in-a-string-is-a-decimal-digit
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <regex>
+
+bool wasInteger(const std::string & num) {
+	return std::regex_match(num, std::regex("[+-]?[0-9]+"));
+}
+
+struct Test {
+	std::string str;
+	bool expected;
+};
+
+static const std::string CSI{ "\x1b[" };
+static const std::string RED{ CSI + "31m" };
+static const std::string GREEN{ CSI + "32m" };
+static const std::string RESET{ CSI + "0m" };
+
+int main() {
+	static const Test tests[]{
+		{"+", false},
+		{"-", false},
+		{"0", true},
+		{"3", true},
+		{"9", true},
+		{"a", false},
+		{"99a9", false},
+		{"9909", true},
+		{"", false},
+		{"-3.14", false},
+		{"+32768", true},
+		{"-32768", true},
+	};
+
+	static const std::string badgood[]{
+		RED + "[BAD] " + RESET,
+		GREEN + "[OK] " + RESET
+	};
+
+	for (const auto& t : tests) {
+		auto result = wasInteger(t.str);
+		std::cout << badgood[result == t.expected]
+			<< std::boolalpha << "got " << result
+			<< ", expected " << t.expected
+			<< " from \"" << t.str << "\"\n";
+	}
+}
