@@ -1,1 +1,93 @@
-placeholder
+#include <iostream>
+#include <fstream>
+#include <locale>
+#include <string>
+#include <vector>
+#include <limits>
+#include <sstream>
+#include "usingDeclarations.h"
+
+vector <string> trickyWordsVector;
+void printWords(char userLetterInput);
+// void nameCurseWords();
+
+int main() {	
+	cout << "----------------<>-----------\n";
+	cout << "Welcome to Your TRICKY WORDS Helper!\n";
+	cout << "----------------<>-----------\n";
+
+	string userFirstName; 
+	size_t nameOnlyAlpha{};
+
+	do {
+		cout << "\nEnter your first name: ";
+		getline(cin, userFirstName);
+		nameOnlyAlpha = userFirstName.find_first_of("0123456789`~!@#$%^&*()':'';''/'-_=+{}[]|:<>,.' '?'\t\"");
+	} while (nameOnlyAlpha != string::npos || userFirstName.empty());
+	
+	char userLetterInput; 
+	char userChoiceContinue;
+
+	do {
+		do {
+		cout << "\nEnter a letter [a-z]: ";
+		cin >> userLetterInput;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		userLetterInput = toupper(userLetterInput);
+
+		if (isalpha(userLetterInput)) {
+			cout << "\n" << ",\n\nHere's your list of tricky words for the letter (" << char(toupper(userLetterInput)) << "):\n" << endl;
+			}
+		} while (!isalpha(userLetterInput)); 
+
+	// nameCurseWords();
+
+		ifstream trickyWordsFile("trickyWordsList.txt");
+
+		if (trickyWordsFile.is_open()) {
+			if (trickyWordsVector.empty()) {
+				string line;
+				while (getline(trickyWordsFile, line)) {
+					if (line.size() > 0) {
+						trickyWordsVector.push_back(line);
+					}
+				}
+			}
+		}
+		else {
+			cerr << "Cannot open the file.";
+		}
+		trickyWordsFile.close();
+
+		printWords(userLetterInput);
+		
+		do {
+			cout << "\nWould you like to enter another letter [y,n]?: ";
+			cin >> userChoiceContinue;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		} while (char(tolower(userChoiceContinue)) != 'y' && char(tolower(userChoiceContinue)) != 'n');
+
+	} while (char(tolower(userChoiceContinue)) == 'y');
+
+	cout << "\n----------------<>-----------\n";
+	cout << "Thank you for using Your TRICKY WORDS Helper!\n";
+	cout << "\n----------------<>-----------\n";
+
+	return 0;
+} // end main()
+
+void printWords(char userLetterInput) {
+	for (int i = 0; i < trickyWordsVector.size(); i++) {
+		if (trickyWordsVector[i][0] == userLetterInput) {
+			cout << trickyWordsVector[i];
+			cout << "\n";
+		}
+	}
+} // end printWords()
+
+#if 0
+void nameCurseWords(string userFirstName) {
+	// add code, lol
+
+} // end nameCurseWords()
+#endif
