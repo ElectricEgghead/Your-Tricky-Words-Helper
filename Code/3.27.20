@@ -1,1 +1,129 @@
-placeholder
+#include <iostream>
+#include <fstream>
+#include <locale>
+#include <string>
+#include <vector>
+#include <limits>
+#include <sstream>
+#include "usingDeclarations.hpp"
+#include "smarterprofeature.hpp"
+#include "madlibsprofeature.hpp"
+#include "createwordprofeature.hpp"
+
+vector <string> trickyWordsVector;
+vector <string> nameCurseWordsVector; 
+void printWords(char userLetterInput);
+void getTrickyWords();
+void getNameCurseWords();
+
+int main() {	
+	cout << "----------------<>-----------\n";
+	cout << "Welcome to Your TRICKY WORDS Helper!\n";
+	cout << "----------------<>-----------\n\n";
+	cout << "What do you want to do, today?\n\n";
+	cout << "Type:\nWORDS\nCREATE\nSMARTER\nGAME";
+
+	string userMenuChoice; 
+	size_t menuOnlyAlpha{};
+
+	do {
+		int i = 0;
+		do {
+			cout << "\n\nEnter your choice: ";
+			getline(cin, userMenuChoice);
+			menuOnlyAlpha = userMenuChoice.find_first_of("0123456789`~!@#$%^&*()':'';''/'-_=+{}[]|:<>,.' '?'\t\"");
+
+			getNameCurseWords();
+
+			for (int i = 0; i < nameCurseWordsVector.size(); i++) {
+				if (nameCurseWordsVector[i] == userMenuChoice) {
+					cout << "Curse word entered. SAILOR MOUTH present."; //todo add messages, lol
+					cout << "\n";
+				}
+			}
+		} while (userMenuChoice == nameCurseWordsVector[i]);
+	} while (menuOnlyAlpha != string::npos || userMenuChoice.empty());
+	
+	char userLetterInput; 
+	char userChoiceContinue;
+
+	do {
+		do {
+		cout << "\nEnter a letter [a-z]: ";
+		cin >> userLetterInput;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		userLetterInput = toupper(userLetterInput);
+
+		if (isalpha(userLetterInput)) {
+			cout << "\nHere's your list of tricky words for the letter (" << char(toupper(userLetterInput)) << "):\n" << endl;
+			}
+		} while (!isalpha(userLetterInput));
+
+		getTrickyWords();
+
+		printWords(userLetterInput);
+		
+		do {
+			cout << "\nWould you like to enter another letter [y,n]?: ";
+			cin >> userChoiceContinue;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		} while (char(tolower(userChoiceContinue)) != 'y' && char(tolower(userChoiceContinue)) != 'n');
+	} while (char(tolower(userChoiceContinue)) == 'y');
+
+	cout << "\n----------------<>-----------\n";
+	cout << "Thank you for using Your TRICKY WORDS Helper!\n";
+	cout << "\n----------------<>-----------\n";
+
+	return 0;
+} // end main()
+
+void printWords(char userLetterInput) {
+	for (int i = 0; i < trickyWordsVector.size(); i++) {
+		if (trickyWordsVector[i][0] == userLetterInput) {
+			cout << trickyWordsVector[i];
+			cout << "\n";
+		}
+	}
+} // end printWords()
+
+void getTrickyWords() {
+	ifstream trickyWordsFile("trickyWordsList.txt");
+
+	if (trickyWordsFile.is_open()) {
+		if (trickyWordsVector.empty()) {
+			string line;
+			while (getline(trickyWordsFile, line)) {
+				if (line.size() > 0) {
+					trickyWordsVector.push_back(line);
+				}
+			}
+		}
+	}
+	else {
+		cerr << "Cannot open the file.";
+	}
+
+	trickyWordsFile.close();
+
+} // end getTrickyWords()
+
+void getNameCurseWords() {
+	ifstream nameCurseWordsFile("nameCurseWordsList.txt");
+
+	if (nameCurseWordsFile.is_open()) {
+		if (nameCurseWordsVector.empty()) {
+			string line;
+			while (getline(nameCurseWordsFile, line)) {
+				if (line.size() > 0) {
+					nameCurseWordsVector.push_back(line);
+				}
+			}
+		}
+	}
+	else {
+		cerr << "Cannot open the file, you sailor mouth. ;)";
+	}
+
+	nameCurseWordsFile.close();	
+
+} // end getNameCurseWords()
