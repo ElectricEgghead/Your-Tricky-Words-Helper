@@ -90,6 +90,7 @@ Dying (death is coming)
 Ecstasy
 Embarrass(ment)
 Enough
+Erroneous
 Especially
 Equipment
 Exhilarate
@@ -291,5 +292,8 @@ Vacuum
 Weather
 Wednesday
 Weird
+X (Words coming soon)
+Y (Words coming soon)
+Z (Words coming soon)
 
 *Sources: https://www.independent.co.uk/life-style/the-58-most-commonly-misused-words-and-phrases-a6754551.html
