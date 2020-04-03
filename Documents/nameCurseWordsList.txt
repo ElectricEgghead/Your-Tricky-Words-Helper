@@ -1,6 +1,9 @@
 fuck
 fuck you
 shit
+shit head
+shithead
+piss
 piss off
 dick head
 dickhead
@@ -10,6 +13,7 @@ bastard
 bitch
 damn
 cunt
+//UK
 bollocks
 bugger
 bloody hell
@@ -38,6 +42,7 @@ crap
 gobdaw
 dumbass
 fecker
+// Irish
 ráicleach
 slut
 cúl tóna
@@ -49,15 +54,18 @@ merde
 putain
 whore
 bullshit
+// French
 c’est des conneries
 salope
 fils de salope
 fils de pute
 t’as pas de couilles
 je m’en fous 
+// Quebec
 osti
 calisse 
 tabarnak
+// Spanish
 mierda
 váyase a la mierda
 que te folle un pez
@@ -67,6 +75,7 @@ verga
 cock
 cojones
 coño
+// Italian
 cazzo
 che palle
 tette
@@ -78,6 +87,7 @@ pompinara
 asshat
 ass face
 fuck face
+// German
 arschgesicht
 scheißkopf
 küss meinen arsch
@@ -87,6 +97,7 @@ Zur Hölle mit ihnen
 wichser
 arschgeige
 ass fiddle
+// Portuguese
 cabra
 cabrão
 monte de merda
@@ -99,6 +110,7 @@ puta que pariu
 holy shit
 chupa-mos
 suck it
+// Russian
 xуй
 khui
 cучка
@@ -107,6 +119,7 @@ oбосра́ться
 obosrat'sya
 блядь
 blyad'
+// Chinese
 王八蛋
 wáng bā dàn
 混蛋
@@ -121,6 +134,7 @@ tā mā de
 screw you
 我肏
 wǒ cào
+// Japanese
 くそ 
 kuso
 やりまん
@@ -133,6 +147,7 @@ kusottare
 busu
 死ねえ
 shi’ne
+// Korean
 아, 씨발 
 sshi-bal
 씨방새 
@@ -143,10 +158,11 @@ gae-sae
 nyeon
 좆
 jot
+// Arabic
 kess ikhtak
 kess ommak
 ya ibn el sharmouta
-ayreh feek 
+ayreh feek
 telhas teeze 
 ya sharmouta 
 ya kalb
