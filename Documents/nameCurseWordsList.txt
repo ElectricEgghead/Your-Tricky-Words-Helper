@@ -1,4 +1,4 @@
-
+// US
 Fuck
 Fuck You
 Shit
@@ -9,12 +9,32 @@ Piss Off
 Dick Head
 Dickhead
 Asshole
+Slut
+Hell
+Whore
+Bullshit
+Bull Shit
+Cock
+Asshat
+Ass Hat
+Ass Face
+Fuck Face
+Ass Fiddle
+Ass Crack
+Holy Shit
+Suck It
+Screw You
 Son Of A Bitch
 Bastard
 Bitch
+Balls
+Poop
+Crap
 Damn
 Cunt
-//UK
+Pussy
+Prick
+// UK
 Bollocks
 Bugger
 Bloody Hell
@@ -25,36 +45,27 @@ Shag
 Wanker
 Taking The Piss
 Twat
-Pussy
 Bloody Oath
 Root
 Get Stuffed
 Bugger Me
 Fair Suck Of The Sav
-Prick
 Bellend
 Knobend
 Feck
 Git
 Arse
-Balls
-Poop
-Crap
 Gobdaw
 Dumbass
 Fecker
 // Irish
 RáIcleach
-Slut
 Cúl Tóna
 Aiteann
 Téigh Go Dtí Ifreann
-Hell
 Póg Mo Thóin
 Merde
 Putain
-Whore
-Bullshit
 // French
 C’est Des Conneries
 Salope
@@ -73,7 +84,6 @@ Que Te Folle Un Pez
 Folle
 Puto
 Verga
-Cock
 Cojones
 Coño
 // Italian
@@ -85,9 +95,6 @@ Stronza
 Fanculo
 Vaffanculo
 Pompinara
-Asshat
-Ass Face
-Fuck Face
 // German
 Arschgesicht
 ScheißKopf
@@ -97,7 +104,6 @@ Zur Hölle Mit
 Zur Hölle Mit Ihnen
 Wichser
 Arschgeige
-Ass Fiddle
 // Portuguese
 Cabra
 Cabrão
@@ -106,11 +112,8 @@ Caralho
 Foda-Se
 Vai Para O Caralho
 Rego Do Cu
-Ass Crack
 Puta Que Pariu
-Holy Shit
 Chupa-Mos
-Suck It
 // Russian
 Xуй
 Khui
@@ -132,7 +135,6 @@ Dog Fart
 Hùn Zhàng
 他妈的
 Tā Mā De
-Screw You
 我肏
 Wǒ Cào
 // Japanese
@@ -170,3 +172,6 @@ Ya Kalb
 Tozz Feek
 Kol Khara
 Ya Khara
+
+*Source: https://www.fluentin3months.com/dirty-words/
+*Source: https://blogs.transparent.com/arabic/10-most-common-swear-words-and-expressions-in-arabic/
