@@ -18,13 +18,13 @@ int main() {
 	cout << "Welcome to Your TRICKY WORDS Helper!\n";
 	cout << "----------------<>-----------\n";
 
-	string userFirstName;
+	wstring userFirstName; //todo use wcout and ?wgetline?
 	size_t firstNameOnlyAlpha{};
 	bool isNameCurseWord = false;
 
 	do {
 		cout << "\nEnter your first name: ";
-		getline(cin, userFirstName);
+		getline(cin, userFirstName); //todo FIX. Not checking for other languages' curse words. Not recognizing characters. Something, something, unicode, lol!
 		for (unsigned __int8 i = 1; i < userFirstName.length(); i++) {
 			if (userFirstName[i - 1] == ' ') {
 				userFirstName[i] = toupper(userFirstName[i]);
