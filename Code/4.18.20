@@ -22,25 +22,50 @@ int main() {
 	size_t firstNameOnlyAlpha{};
 	bool isNameCurseWord = false;
 
-	//todo FIX toupper, tolower are for char not wchar
-	
 	do {
 		cout << "\nEnter your first name: ";
 		getline(wcin, userFirstName);
 		for (unsigned __int8 i = 1; i < userFirstName.length(); i++) {
 			if (userFirstName[i - 1] == ' ') {
-				userFirstName[i] = toupper(userFirstName[i]);
+				userFirstName[i] = towupper(userFirstName[i]);
 			} else {
-				userFirstName[i] = tolower(userFirstName[i]);
+				userFirstName[i] = towlower(userFirstName[i]);
 			}
 		}
-		userFirstName[0] = toupper(userFirstName[0]);
+		userFirstName[0] = towupper(userFirstName[0]);
 		firstNameOnlyAlpha = userFirstName.find_first_of(L"0123456789`~!@#$%^&*()':'';''/'-_=+{}[]|:<>,.' '?'\t\"");
 
 		getNameCurseWords();
 
+#if 0 
+		//todo testing erase - find raw bytes
+		for (int i = 0; i < userFirstName.length(); i++) {
+			cout << &userFirstName[i];
+			cout << "\n";
+		}
+
+#endif
+
+#if 0
 		//todo FIX accepts some unicode curse words like ScheißKopf = encoding issue
 		// displays as ScheiáKopf - still accepts curse word even when put into txt file
+		* possible answer: https://stackoverflow.com/questions/920511/how-to-visualize-bytes-with-c-c
+
+		From stack overflow :
+
+		This sounds like an encoding issue.There are several different ways to encode non - English characters.There's multi-byte Unicode encoding, UTF-8, where a single character is encoded as two or more bytes; there's a family of ISO - 8859 - based encodings, where the high bit bytes are mapped to different characters, with the same bytes being used for different characters between ISO - 8859 variations.This is something that you'll need to figure out by looking at the raw bytes.
+
+		// figure out how this code works, then see if it will solve issue
+				
+		int wchars_num = MultiByteToWideChar(CP_UTF8, 0, x.c_str(), -1, NULL, 0);
+		wchar_t* wstr = new wchar_t[wchars_num];
+		MultiByteToWideChar(CP_UTF8, 0, x.c_str(), -1, wstr, wchars_num);
+		// do whatever with wstr
+		delete[] wstr;
+
+		// explained in stack overflow post. check later. :)
+
+#endif
 
 		if (find(nameCurseWordsVector.begin(), nameCurseWordsVector.end(), userFirstName) != nameCurseWordsVector.end()) {
 			cout << "Curse word entered. Please freakin' try again.\n";
